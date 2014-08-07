@@ -1,0 +1,8 @@
+.col-md-6 >.panel-info > .panel-heading{
+    background-color: seagreen;
+    border-color: seagreen;
+}
+
+.container{
+    width: 1000px;
+}
