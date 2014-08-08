@@ -2,6 +2,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
+            js:{
+                files: ['**/*.js'],
+                tasks: [],    
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                }
+            },
             css: {
                 files: ['**/*.css'],
                 tasks: [],
@@ -18,11 +25,15 @@ module.exports = function(grunt) {
             },
             livereload: {
                 options: {
-                    livereload: '<%= connect.options.livereload %>'
+                    livereload: '<%= connect.options.livereload %>',
+                    port: 9000,
+                    livereload: 35729,
+                    hostname: 'localhost'
                 },
                 files: [
                     '**/*.html',
                     '**/*.css',
+                    '**/*.js'
                 ]
             }
         },
@@ -43,5 +54,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
 
 
-    grunt.registerTask('default', ['connect:livereload','watch']);
+    grunt.registerTask('default', ['connect','watch']);
 };
