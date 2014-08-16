@@ -1,4 +1,89 @@
 /*!
+ *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+@font-face {
+  font-family: FontAwesome;
+  src: url(../fonts/fontawesome-webfont.eot?v=4.1.0);
+  src: url(../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0) format('embedded-opentype'),url(../fonts/fontawesome-webfont.woff?v=4.1.0) format('woff'),url(../fonts/fontawesome-webfont.ttf?v=4.1.0) format('truetype'),url(../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular) format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+
+  100% {
+    -moz-transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes spin {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+
+  100% {
+    -o-transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.fa-facebook-square:before {
+  content: "\f082";
+}
+
+.fa-linkedin-square:before {
+  content: "\f08c";
+}
+
+.fa-github-square:before {
+  content: "\f092";
+}
+
+.fa-steam-square:before {
+  content: "\f1b7";
+}
+
+/*!
  * Bootswatch v3.2.0
  * Homepage: http://bootswatch.com
  * Copyright 2012-2014 Thomas Park

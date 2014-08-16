@@ -11,6 +11,10 @@ module.exports = function(grunt) {
                 files: ['css/*.css', '!css/styles.min.css'],
                 tasks: ['cssmin', 'uncss']
             },
+            html: {
+                files: ['index.html'],
+                tasks: ['uncss']
+            },
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>',
@@ -46,7 +50,7 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'css/styles.min.css': ['css/bootstrap-theme.css', 'css/override-bootstrap.css', 'css/main.css']
+                    'css/styles.min.css': ['bower_components/font-awesome/css/font-awesome.min.css','css/bootstrap-theme.css', 'css/override-bootstrap.css', 'css/main.css']
                 }
             }
         },
