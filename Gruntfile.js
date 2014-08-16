@@ -7,6 +7,10 @@ module.exports = function(grunt) {
                 files:['js/*.js', '!js/scripts.min.js'],
                 tasks: ['uglify']   
             },
+            css: {
+                files: ['css/*.css', '!css/styles.min.css'],
+                tasks: ['cssmin']
+            },
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>',
@@ -38,7 +42,14 @@ module.exports = function(grunt) {
                     'js/scripts.min.js': ['js/vendor/*.js', 'js/plugins.js', 'js/main.js']
                 }
             }
+        },
+        cssmin: {
+            combine: {
+                files: {
+                    'css/styles.min.css': ['css/bootstrap-theme.css', 'css/override-bootstrap.css', 'css/main.css']
+                }
+            }
         }
     });
-    grunt.registerTask('default', ['uglify', 'connect','watch']);
+    grunt.registerTask('default', ['cssmin', 'uglify', 'connect','watch']);
 };
