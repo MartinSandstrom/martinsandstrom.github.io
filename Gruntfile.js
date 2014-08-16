@@ -1,39 +1,22 @@
 module.exports = function(grunt) {
+    require('load-grunt-tasks')(grunt);
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         watch: {
-            js:{
-                files: ['**/*.js'],
-                tasks: [],    
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                }
-            },
-            css: {
-                files: ['**/*.css'],
-                tasks: [],
-                options: {
-                  livereload: '<%= connect.options.livereload %>'
-                }   
-            },
-            html: {
-                files: ['**/*.html'],
-                tasks: [],
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                }
+            js: {
+                files:['js/*.js', '!js/scripts.min.js'],
+                tasks: ['uglify']   
             },
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>',
-                    port: 9000,
-                    livereload: 35729,
+                    port: '<%= connect.options.port %>',
                     hostname: 'localhost'
                 },
                 files: [
-                    '**/*.html',
-                    '**/*.css',
-                    '**/*.js'
+                    '*.html',
+                    'css/*.css',
+                    'js/**/*.js'
                 ]
             }
         },
@@ -48,11 +31,14 @@ module.exports = function(grunt) {
                     open: true
                 }
             }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'js/scripts.min.js': ['js/vendor/*.js', 'js/plugins.js', 'js/main.js']
+                }
+            }
         }
     });
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-
-
-    grunt.registerTask('default', ['connect','watch']);
+    grunt.registerTask('default', ['uglify', 'connect','watch']);
 };
