@@ -9,7 +9,7 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['css/*.css', '!css/styles.min.css'],
-                tasks: ['cssmin']
+                tasks: ['cssmin', 'uncss']
             },
             livereload: {
                 options: {
@@ -49,7 +49,14 @@ module.exports = function(grunt) {
                     'css/styles.min.css': ['css/bootstrap-theme.css', 'css/override-bootstrap.css', 'css/main.css']
                 }
             }
+        },
+        uncss: {
+           dist: {
+               files: {
+                  'css/styles.min.css': ['index.html']
+               }
+           }
         }
     });
-    grunt.registerTask('default', ['cssmin', 'uglify', 'connect','watch']);
+    grunt.registerTask('default', ['cssmin', 'uglify','uncss', 'connect','watch']);
 };
