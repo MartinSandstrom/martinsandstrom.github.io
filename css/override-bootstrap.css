@@ -3,6 +3,10 @@
     border-color: seagreen;
 }
 
+.col-xs-2{
+    margin-top: 20px;
+}
+
 .container{
     max-width: 1000px;
 }

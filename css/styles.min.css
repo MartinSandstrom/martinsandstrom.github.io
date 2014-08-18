@@ -384,6 +384,10 @@ h5 {
   border-color: #2e8b57;
 }
 
+.col-xs-2 {
+  margin-top: 20px;
+}
+
 .container {
   max-width: 1000px;
 }
@@ -410,10 +414,7 @@ footer {
   margin-top: 30px;
 }
 
-i {
-  margin-top: 20px;
-}
-
+.col-xs-2,
 .content {
   margin-top: 30px;
 }
