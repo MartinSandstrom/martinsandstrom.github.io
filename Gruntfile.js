@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                 tasks: ['uglify']   
             },
             css: {
-                files: ['css/*.css', '!css/styles.min.css'],
+                files: ['css/*.css', '!css/sytnles.min.css'],
                 tasks: ['cssmin', 'uncss']
             },
             html: {
