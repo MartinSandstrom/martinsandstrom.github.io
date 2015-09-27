@@ -6,4 +6,10 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     )
   )
   document.querySelector('head').appendChild(msViewportStyle)
-}    
+}
+
+window.onload = function(){
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+    console.log('ready');
+}

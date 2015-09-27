@@ -14,6 +14,18 @@ footer{
     margin-top: 30px;
 }
 
+ul{
+    width: 100%
+    display:table;
+    margin-top: 40px;
+}
+
+li{
+    width: 20%;
+    display:inline-block;
+    text-align:center;
+}
+
 .content{
     margin-top: 30px;
 }
