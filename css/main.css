@@ -8,6 +8,10 @@ body{
     margin-top: 40px;
 }
 
+.panel.panel-info{
+    min-height: 200px;
+}
+
 footer{
     border-top: 2px solid white;
     width: 700px;
